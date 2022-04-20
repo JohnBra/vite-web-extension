@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite.git"
+    "url": "https://github.com/JohnBra/web-extension.git"
   },
   "scripts": {
     "build": "tsc --noEmit && vite build",
