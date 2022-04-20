@@ -1,11 +1,11 @@
-import packageJson from "../package.json";
+import pkg from "../package.json";
 import { ManifestType } from "@src/manifest-type";
 
 const manifest: ManifestType = {
   manifest_version: 3,
-  name: packageJson.name,
-  version: packageJson.version,
-  description: packageJson.description,
+  name: pkg.displayName,
+  version: pkg.version,
+  description: pkg.description,
   options_page: "src/pages/options/index.html",
   background: { service_worker: "src/pages/background/index.js" },
   action: {
