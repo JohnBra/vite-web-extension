@@ -18,7 +18,6 @@ export default function Newtab(): JSX.Element {
         >
           Learn React!
         </a>
-        <h6>The color of this paragraph is defined using SASS.</h6>
       </header>
     </div>
   );
