@@ -63,7 +63,8 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 
 <img width="305" alt="스크린샷 2022-04-11 오전 2 22 11" src="https://user-images.githubusercontent.com/53500778/162631660-d35c5f12-e0d7-4431-a020-97024cdda7a7.png">
 
-
+## Credit
+Heavily inspired by: [Jonghakseo's vit chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite)
 
 ## Documents <a name="documents"></a>
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
