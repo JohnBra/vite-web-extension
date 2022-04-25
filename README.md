@@ -8,30 +8,35 @@
 
 - [Intro](#intro)
 - [Features](#features)
-- [Installation](#installation)
-  - [Procedures](#procedures)
-- [Screenshots](#screenshots)
-  - [NewTab](#newtab)
-  - [Popup](#popup)  
-- [Documents](#documents)
+- [Usage](#usage)
+  - [Setup](#setup) 
+- [Tech Docs](#tech)
+- [Credit](#credit)
 
 
 ## Intro <a name="intro"></a>
-This boilerplate is made for creating chrome extensions using React and Typescript.
-> The focus was on improving the build speed and development experience with Vite.
+This boilerplate is meant to be a quick start for creating chrome extensions using React, Typescript and Tailwind CSS.
+
+> For improved DX and rapid building vite and nodemon are used.
+
+> Chrome does not accept manifest v2 extensions since Jan 2022, therefore this template uses manifest v3.
+
+> Firefox + other browsers don't yet support manifest v3, so cross browser usage is not encouraged.
+
+* Read more about Chrome manifest v2 support [here](https://developer.chrome.com/docs/extensions/mv2/).
+* Read more about Firefox Manifest v3 support [here](https://discourse.mozilla.org/t/manifest-v3/94564).
 
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [SASS](https://sass-lang.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
 
-## Installation <a name="installation"></a>
+## Usage <a name="usage"></a>
 
-### Procedures <a name="procedures"></a>
+### Setup <a name="setup"></a>
 1. Clone this repository.
 2. Change `name` and `description` in package.json => **Auto synchronize with manifest** 
 3. Run `yarn` or `npm i` (check your node version >= 16)
@@ -44,27 +49,51 @@ This boilerplate is made for creating chrome extensions using React and Typescri
    5. Select - `dist` folder in this project (after dev or build)
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
-## Screenshots <a name="screenshots"></a>
+### Customization
+As the template has **all** of the potential Chrome extension pages implemented, you likely have to 
+customize it to fit your needs.
 
-### New Tab <a name="newtab"></a>
+E.g. you don't want the newtab page to activate whenever you open a new tab:
+1. remove the directory `newtab` and its contents in `src/pages`
+2. remove the `newtab` rollup input in the `vite.config.ts`
 
-<img width="971" alt="스크린샷 2022-04-11 오전 2 22 00" src="https://user-images.githubusercontent.com/53500778/162631646-cd40976b-b737-43d0-8e6a-6ac090a2e2d4.png">
+```ts
+//...
+build: {
+    outDir,
+    rollupOptions: {
+      input: {
+        devtools: resolve(pagesDir, 'devtools', 'index.html'),
+        panel: resolve(pagesDir, 'panel', 'index.html'),
+        content: resolve(pagesDir, 'content', 'index.ts'),
+        background: resolve(pagesDir, 'background', 'index.ts'),
+        popup: resolve(pagesDir, 'popup', 'index.html'),
+        newtab: resolve(pagesDir, 'newtab', 'index.html'),  // <--- REMOVE THIS LINE
+        options: resolve(pagesDir, 'options', 'index.html'),
+      },
+      output: {
+        entryFileNames: (chunk) => `src/pages/${chunk.name}/index.js`,
+      },
+    },
+  },
+/...
+```
 
-### Popup <a name="popup"></a>
+CSS files in the `src/pages/*` directories are not necessary. They are left in there in case you want 
+to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
-<img width="305" alt="스크린샷 2022-04-11 오전 2 22 11" src="https://user-images.githubusercontent.com/53500778/162631660-d35c5f12-e0d7-4431-a020-97024cdda7a7.png">
+Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
 
-## Credit
-Heavily inspired by: [Jonghakseo's vit chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite)
-
-## Documents <a name="documents"></a>
+# Tech Docs <a name="tech"></a>
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
-- [ChromeExtension](https://developer.chrome.com/docs/extensions/mv3/)
+- [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
 - [Rollup](https://rollupjs.org/guide/en/)
 - [Rollup-plugin-chrome-extension](https://www.extend-chrome.dev/rollup-plugin)
+- [Tailwind CSS](https://tailwindcss.com/docs/configuration)
 
+# Credit <a name="credit"></a>
+Heavily inspired by [Jonghakseo's vite chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite). 
+It uses SASS instead of TailwindCSS if you want to check it out.
 
-
----
-
-[Jonghakseo](https://nookpi.tistory.com/)
+# Contributing <a name="contributing"></a>
+Feel free to open PRs or raise issues!
