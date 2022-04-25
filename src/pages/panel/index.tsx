@@ -4,9 +4,9 @@ import Panel from '@pages/panel/Panel';
 import '@pages/panel/index.css';
 
 function init() {
-  const appContainer = document.querySelector("#app-container");
-  if (!appContainer) throw new Error('Can not find AppContainer');
-  const root = createRoot(appContainer);
+  const rootContainer = document.querySelector("#_root");
+  if (!rootContainer) throw new Error("Can't find Panel root element");
+  const root = createRoot(rootContainer);
   root.render(<Panel />);
 }
 

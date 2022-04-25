@@ -4,9 +4,9 @@ import Options from '@pages/options/Options';
 import '@pages/options/index.css';
 
 function init() {
-  const appContainer = document.querySelector("#app-container");
-  if (!appContainer) throw new Error('Can not find AppContainer');
-  const root = createRoot(appContainer);
+  const rootContainer = document.querySelector("#_root");
+  if (!rootContainer) throw new Error("Can't find Options root element");
+  const root = createRoot(rootContainer);
   root.render(<Options />);
 }
 
