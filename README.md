@@ -27,6 +27,8 @@ This boilerplate is meant to be a quick start for creating chrome extensions usi
 * Read more about Chrome manifest v2 support [here](https://developer.chrome.com/docs/extensions/mv2/).
 * Read more about Firefox Manifest v3 support [here](https://discourse.mozilla.org/t/manifest-v3/94564).
 
+As soon as Firefox supports manifest v3, support will be added in this repo as well.
+
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
