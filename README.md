@@ -12,6 +12,7 @@
   - [Setup](#setup) 
 - [Tech Docs](#tech)
 - [Credit](#credit)
+- [Contributing](#contributing)
 
 
 ## Intro <a name="intro"></a>
