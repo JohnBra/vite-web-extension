@@ -7,6 +7,7 @@
 ## Table of Contents
 
 - [Intro](#intro)
+- [Why another boilerplate?](#why)
 - [Features](#features)
 - [Usage](#usage)
   - [Setup](#setup) 
@@ -28,6 +29,13 @@ This boilerplate is meant to be a quick start for creating chrome extensions usi
 * Read more about Firefox Manifest v3 support [here](https://discourse.mozilla.org/t/manifest-v3/94564).
 
 As soon as Firefox supports manifest v3, support will be added in this repo as well.
+
+## Why another boilerplate? <a name="why"></a>
+I have used webpack react boilerplates and found it too hard to configure.
+
+Vite is actually mega easy to understand, which makes it easier to get into and to maintain for others.
+
+I couldn't find a boilerplate for React, TypeScript and Tailwind CSS. So here it is.
 
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
