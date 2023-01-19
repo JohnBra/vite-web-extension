@@ -2,6 +2,13 @@
 <img src="public/icon-128.png" alt="logo"/>
 <h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS</h1>
 
+<h2>
+This is a side product of my Chrome Extension [Supatabs](https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk).
+Supatabs is a 🔥🔥 BLAZINGLY FAST 🔥🔥 free alternative to OneTab with support for chrome tabs groups and searching through tabs.
+
+If you tend to have thousands of tabs open, are a OneTab user, or use any other tab manager 
+make sure to check it out [here](https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk)!
+</h2>
 </div>
 
 ## Table of Contents
@@ -18,12 +25,6 @@
 
 ## Intro <a name="intro"></a>
 This boilerplate is meant to be a quick start for creating chrome extensions using React, Typescript and Tailwind CSS.
-
-It's a side product of my Chrome Extension [Supatabs](https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk).
-Supatabs is a 🔥🔥 BLAZINGLY FAST 🔥🔥 free alternative to OneTab with support for chrome tabs groups and searching through tabs.
-
-If you tend to have thousands of tabs open, are a OneTab user, or use any other tab manager 
-make sure to check it out [here](https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk)!
 
 Built for:
 > For improved DX and rapid building vite and nodemon are used.
