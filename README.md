@@ -25,6 +25,7 @@ Supatabs is a 🔥🔥 BLAZINGLY FAST 🔥🔥 free alternative to OneTab with s
 If you tend to have thousands of tabs open, are a OneTab user, or use any other tab manager 
 make sure to check it out [here](https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk)!
 
+Built for:
 > For improved DX and rapid building vite and nodemon are used.
 
 > Chrome does not accept manifest v2 extensions since Jan 2022, therefore this template uses manifest v3.
