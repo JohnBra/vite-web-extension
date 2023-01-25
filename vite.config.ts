@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
-import makeManifest from './utils/plugins/make-manifest';
+import { defineConfig } from 'vite';
 import copyContentStyle from './utils/plugins/copy-content-style';
+import makeManifest from './utils/plugins/make-manifest';
 
 const root = resolve(__dirname, 'src');
 const pagesDir = resolve(root, 'pages');
@@ -13,16 +13,16 @@ const publicDir = resolve(__dirname, 'public');
 export default defineConfig({
   resolve: {
     alias: {
-      "@src": root,
-      "@assets": assetsDir,
-      "@pages": pagesDir,
+      '@src': root,
+      '@assets': assetsDir,
+      '@pages': pagesDir,
     },
   },
   plugins: [react(), makeManifest(), copyContentStyle()],
   publicDir,
   build: {
     outDir,
-    sourcemap: process.env.__DEV__ === "true",
+    sourcemap: process.env.__DEV__ === 'true',
     rollupOptions: {
       input: {
         devtools: resolve(pagesDir, 'devtools', 'index.html'),
