@@ -1,12 +1,14 @@
+import type { Manifest } from 'webextension-polyfill';
 import pkg from '../package.json';
-import { ManifestType } from '@src/manifest-type';
 
-const manifest: ManifestType = {
+const manifest: Manifest.WebExtensionManifest = {
   manifest_version: 3,
   name: pkg.displayName,
   version: pkg.version,
   description: pkg.description,
-  options_page: 'src/pages/options/index.html',
+  options_ui: {
+    page: 'src/pages/options/index.html',
+  },
   background: {
     service_worker: 'src/pages/background/index.js',
     type: 'module',
@@ -19,7 +21,7 @@ const manifest: ManifestType = {
     newtab: 'src/pages/newtab/index.html',
   },
   icons: {
-    "128": 'icon-128.png',
+    '128': 'icon-128.png',
   },
   content_scripts: [
     {
