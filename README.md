@@ -40,6 +40,8 @@ Built for:
 
 As soon as Firefox supports manifest v3, support will be added in this repo as well.
 
+Oh by the way ... I also implemented a chrome local/sync storage hook for react, which works well with this 
+template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
 ## Why another boilerplate? <a name="why"></a>
 I have used webpack react boilerplates and found it too hard to configure.
 
