@@ -88,7 +88,6 @@ build: {
       input: {
         devtools: resolve(pagesDir, 'devtools', 'index.html'),
         panel: resolve(pagesDir, 'panel', 'index.html'),
-        content: resolve(pagesDir, 'content', 'index.ts'),
         background: resolve(pagesDir, 'background', 'index.ts'),
         popup: resolve(pagesDir, 'popup', 'index.html'),
         newtab: resolve(pagesDir, 'newtab', 'index.html'),  // <--- REMOVE THIS LINE
@@ -106,6 +105,10 @@ CSS files in the `src/pages/*` directories are not necessary. They are left in t
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
+
+Note:
+content script bundler is added in ```./utils/plugins/build-content-script.ts``` as a custom plugin.
+https://github.com/JohnBra/vite-web-extension/issues/8
 
 # Tech Docs <a name="tech"></a>
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
