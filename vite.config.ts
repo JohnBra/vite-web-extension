@@ -3,11 +3,13 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import copyContentStyle from './utils/plugins/copy-content-style';
 import makeManifest from './utils/plugins/make-manifest';
-
+import buildContentScript from './utils/plugins/build-content-script';
+import { outputFolderName } from './utils/constants';
+ 
 const root = resolve(__dirname, 'src');
 const pagesDir = resolve(root, 'pages');
 const assetsDir = resolve(root, 'assets');
-const outDir = resolve(__dirname, 'dist');
+const outDir = resolve(__dirname, outputFolderName);
 const publicDir = resolve(__dirname, 'public');
 
 export default defineConfig({
@@ -18,16 +20,16 @@ export default defineConfig({
       '@pages': pagesDir,
     },
   },
-  plugins: [react(), makeManifest(), copyContentStyle()],
+  plugins: [react(), makeManifest(), copyContentStyle(), buildContentScript()],
   publicDir,
   build: {
     outDir,
     sourcemap: process.env.__DEV__ === 'true',
+    emptyOutDir: false,
     rollupOptions: {
       input: {
         devtools: resolve(pagesDir, 'devtools', 'index.html'),
         panel: resolve(pagesDir, 'panel', 'index.html'),
-        content: resolve(pagesDir, 'content', 'index.ts'),
         background: resolve(pagesDir, 'background', 'index.ts'),
         popup: resolve(pagesDir, 'popup', 'index.html'),
         newtab: resolve(pagesDir, 'newtab', 'index.html'),
