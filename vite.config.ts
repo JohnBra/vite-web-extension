@@ -1,7 +1,6 @@
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import copyContentStyle from './utils/plugins/copy-content-style';
 import makeManifest from './utils/plugins/make-manifest';
 import buildContentScript from './utils/plugins/build-content-script';
 import { outputFolderName } from './utils/constants';
@@ -20,7 +19,7 @@ export default defineConfig({
       '@pages': pagesDir,
     },
   },
-  plugins: [react(), makeManifest(), copyContentStyle(), buildContentScript()],
+  plugins: [react(), makeManifest(), buildContentScript()],
   publicDir,
   build: {
     outDir,
