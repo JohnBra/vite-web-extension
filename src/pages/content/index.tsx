@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import './style.scss' 
+import './style.css' 
 const div = document.createElement('div');
 div.id = '__root';
 document.body.appendChild(div);
