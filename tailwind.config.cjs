@@ -7,5 +7,6 @@ module.exports = {
       }
     },
   },
+  prefix: '',
   plugins: [],
 }
