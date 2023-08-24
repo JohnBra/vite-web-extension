@@ -78,7 +78,8 @@ customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
-2. remove the `newtab` rollup input in the `vite.config.ts`
+2. remove `chrome_url_overrides: { newtab: 'src/pages/newtab/index.html' },` in `src/manifest.ts`
+3. remove the `newtab` rollup input in the `vite.config.ts`
 
 ```ts
 //...
