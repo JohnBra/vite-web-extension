@@ -1,7 +1,6 @@
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import { outputFolderName } from './utils/constants';
 import { crx, ManifestV3Export } from '@crxjs/vite-plugin';
 
 import manifest from './manifest.json';
@@ -10,7 +9,7 @@ import pkg from './package.json';
 const root = resolve(__dirname, 'src');
 const pagesDir = resolve(root, 'pages');
 const assetsDir = resolve(root, 'assets');
-const outDir = resolve(__dirname, outputFolderName);
+const outDir = resolve(__dirname, 'dist');
 const publicDir = resolve(__dirname, 'public');
 
 export default defineConfig({

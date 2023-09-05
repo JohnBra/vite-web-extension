@@ -12,14 +12,14 @@
   "action": {
     "default_popup": "src/pages/popup/index.html",
     "default_icon": {
-      "32": "public/icon-34.png"
+      "32": "icon-34.png"
     }
   },
   "chrome_url_overrides": {
     "newtab": "src/pages/newtab/index.html"
   },
   "icons": {
-    "128": "public/icon-128.png"
+    "128": "icon-128.png"
   },
   "permissions": [
     "activeTab"
