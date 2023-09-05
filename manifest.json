@@ -12,7 +12,7 @@
   "action": {
     "default_popup": "src/pages/popup/index.html",
     "default_icon": {
-      "32": "icon-34.png"
+      "32": "icon-32.png"
     }
   },
   "chrome_url_overrides": {
@@ -45,7 +45,7 @@
       "resources": [
         "contentStyle.css",
         "icon-128.png",
-        "icon-34.png"
+        "icon-32.png"
       ],
       "matches": []
     }
