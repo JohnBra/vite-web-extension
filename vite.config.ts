@@ -36,6 +36,9 @@ export default defineConfig({
     react(),
     crx({
       manifest: extensionManifest as ManifestV3Export,
+      contentScripts: {
+        injectCss: true,
+      }
     }),
   ],
   publicDir,
