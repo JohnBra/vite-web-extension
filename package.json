@@ -20,6 +20,7 @@
     "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
+    "@crxjs/vite-plugin": "^1.0.14",
     "@types/chrome": "^0.0.237",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
