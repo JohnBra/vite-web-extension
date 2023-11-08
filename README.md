@@ -84,19 +84,6 @@ If you need to declare extra HTML pages beyond those the manifest accommodates, 
 
 This example includes a welcome page to open when the user installs the extension.
 
-```ts vite.config.ts
-export default defineConfig({
-  // ...
-  build: {
-    rollupOptions: {
-      input: {
-        welcome: 'src/pages/welcome/index.html',
-      },
-    },
-  },
-  // ...
-});
-```
 
 CSS files in the `src/pages/*` directories are not necessary. They are left in there in case you want 
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
