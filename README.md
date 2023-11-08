@@ -78,28 +78,24 @@ customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
-2. remove `chrome_url_overrides: { newtab: 'src/pages/newtab/index.html' },` in `src/manifest.ts`
-3. remove the `newtab` rollup input in the `vite.config.ts`
+2. remove `chrome_url_overrides: { newtab: 'src/pages/newtab/index.html' },` in `manifest.json`
 
-```ts
-//...
-build: {
-    outDir,
+If you need to declare extra HTML pages beyond those the manifest accommodates, place them in the Vite config under build.rollupOptions.input.
+
+This example includes a welcome page to open when the user installs the extension.
+
+```ts vite.config.ts
+export default defineConfig({
+  // ...
+  build: {
     rollupOptions: {
       input: {
-        devtools: resolve(pagesDir, 'devtools', 'index.html'),
-        panel: resolve(pagesDir, 'panel', 'index.html'),
-        background: resolve(pagesDir, 'background', 'index.ts'),
-        popup: resolve(pagesDir, 'popup', 'index.html'),
-        newtab: resolve(pagesDir, 'newtab', 'index.html'),  // <--- REMOVE THIS LINE
-        options: resolve(pagesDir, 'options', 'index.html'),
-      },
-      output: {
-        entryFileNames: (chunk) => `src/pages/${chunk.name}/index.js`,
+        welcome: 'src/pages/welcome/index.html',
       },
     },
   },
-/...
+  // ...
+});
 ```
 
 CSS files in the `src/pages/*` directories are not necessary. They are left in there in case you want 
@@ -107,15 +103,11 @@ to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
 
-Note:
-content script bundler is added in ```./utils/plugins/build-content-script.ts``` as a custom plugin.
-https://github.com/JohnBra/vite-web-extension/issues/8
-
 # Tech Docs <a name="tech"></a>
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
 - [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
 - [Rollup](https://rollupjs.org/guide/en/)
-- [Rollup-plugin-chrome-extension](https://www.extend-chrome.dev/rollup-plugin)
+- [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin)
 - [Tailwind CSS](https://tailwindcss.com/docs/configuration)
 
 # Credit <a name="credit"></a>
