@@ -82,6 +82,20 @@ E.g. you don't want the newtab page to activate whenever you open a new tab:
 
 If you need to declare extra HTML pages beyond those the manifest accommodates, place them in the Vite config under build.rollupOptions.input.
 
+Example for addin a side panel page:
+```diff
+build: {
+    outDir,
+    sourcemap: isDev,
+    emptyOutDir: false,
++   rollupOptions: {
++      input: {
++       panel: 'src/pages/side-panel/index.html',
++     },
++   },
+  },
+```
+
 This example includes a welcome page to open when the user installs the extension.
 
 
