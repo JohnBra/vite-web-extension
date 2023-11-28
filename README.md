@@ -7,6 +7,11 @@ This is a side product of my Chrome Extension <a target="_blank" rel="noopener n
 Supatabs is a 🔥🔥 BLAZINGLY FAST 🔥🔥 free alternative to OneTab with support for chrome tab groups and searching through tabs.
 </h5>
 
+<h5>
+If you tend to have thousands of tabs open, are a OneTab user, or use any other tab manager 
+make sure to check it out <a target="_blank" rel="noopener noreferrer" href="https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk">here</a>!
+</h5>
+
 </div>
 
 ## Table of Contents
