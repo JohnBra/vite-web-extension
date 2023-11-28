@@ -32,5 +32,5 @@ jobs:
       - name: Upload extension artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: extension.zip
-          path: ./
+          name: vite-web-extension
+          path: extension.zip
