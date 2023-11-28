@@ -45,6 +45,6 @@ export default defineConfig({
   build: {
     outDir,
     sourcemap: isDev,
-    emptyOutDir: false,
+    emptyOutDir: !isDev,
   },
 });
