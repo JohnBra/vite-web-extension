@@ -27,7 +27,7 @@ jobs:
         run: yarn build
 
       - name: Zip artifacts
-        run: zip extension.zip ./* -r
+        run: zip extension.zip ./dist -r
 
       - name: Upload extension artifacts
         uses: actions/upload-artifact@v3
