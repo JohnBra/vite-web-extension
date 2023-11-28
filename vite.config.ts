@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
+import fs from 'fs';
 import { defineConfig } from 'vite';
 import { crx, ManifestV3Export } from '@crxjs/vite-plugin';
 
@@ -17,12 +18,27 @@ const isDev = process.env.__DEV__ === 'true';
 
 const extensionManifest = {
   ...manifest,
-  ...(isDev ? devManifest: {} as ManifestV3Export),
+  ...(isDev ? devManifest : {} as ManifestV3Export),
   name: isDev ? `DEV: ${ manifest.name }` : manifest.name,
   version: pkg.version,
 };
 
-console.log('manifest', extensionManifest)
+// plugin to remove dev icons from prod build
+function stripDevIcons (apply: boolean) {
+  if (apply) return null
+
+  return {
+    name: 'strip-dev-icons',
+    resolveId (source: string) {
+      return source === 'virtual-module' ? source : null
+    },
+    renderStart (outputOptions: any, inputOptions: any) {
+      const outDir = outputOptions.dir
+      fs.rm(resolve(outDir, 'dev-icon-32.png'), () => console.log(`Deleted dev-icon-32.png frm prod build`))
+      fs.rm(resolve(outDir, 'dev-icon-128.png'), () => console.log(`Deleted dev-icon-128.png frm prod build`))
+    }
+  }
+}
 
 export default defineConfig({
   resolve: {
@@ -40,11 +56,12 @@ export default defineConfig({
         injectCss: true,
       }
     }),
+    stripDevIcons(isDev)
   ],
   publicDir,
   build: {
     outDir,
     sourcemap: isDev,
-    emptyOutDir: !isDev,
+    emptyOutDir: !isDev
   },
 });
