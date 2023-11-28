@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "<name>",
-  "version": "0.0.0",
+  "name": "<name in manifest.json>",
+  "description": "<description in manifest.json>",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },
