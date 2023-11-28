@@ -1,4 +1,4 @@
-name: Build Artifacts
+name: Build and Zip Extension
 
 on:
   workflow_dispatch:
