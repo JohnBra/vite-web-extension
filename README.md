@@ -26,7 +26,7 @@ make sure to check it out <a target="_blank" rel="noopener noreferrer" href="htt
 
 
 ## Intro <a name="intro"></a>
-This boilerplate is meant to be a quick start for creating chrome extensions using React, Typescript and Tailwind CSS.
+This boilerplate is meant to be a minimal quick start for creating chrome extensions using React, Typescript and Tailwind CSS.
 
 Built for:
 > For improved DX and rapid building vite and nodemon are used.
@@ -42,39 +42,41 @@ As soon as Firefox supports manifest v3, support will be added in this repo as w
 
 Oh by the way ... I also implemented a chrome local/sync storage hook for react, which works well with this 
 template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
+
 ## Why another boilerplate? <a name="why"></a>
 I have used webpack react boilerplates and found it too hard to configure.
 
-Vite is actually mega easy to understand, which makes it easier to get into and to maintain for others.
+Vite is mega easy to understand which makes it easier to get into and to maintain for others.
 
-I couldn't find a boilerplate for React, TypeScript and Tailwind CSS. So here it is.
+I couldn't find another minimal boilerplate for React, TypeScript and Tailwind CSS. So here it is.
 
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/)
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
+- Github Action to build and zip your extension (manual trigger)
 
 ## Usage <a name="usage"></a>
 
 ### Setup <a name="setup"></a>
-1. Clone this repository.
-2. Change `name` and `description` in package.json => **Auto synchronize with manifest** 
+1. Clone this repository｀
+2. Change `name` and `description` in `manifest.json`
 3. Run `yarn` or `npm i` (check your node version >= 16)
 4. Run `yarn dev` or `npm run dev`
-5. Load Extension on Chrome
+5. Load Extension in Chrome
    1. Open - Chrome browser
    2. Access - chrome://extensions
-   3. Check - Developer mode
+   3. Tick - Developer mode
    4. Find - Load unpacked extension
    5. Select - `dist` folder in this project (after dev or build)
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
 ### Customization
-As the template has **all** of the potential Chrome extension pages implemented, you likely have to 
-customize it to fit your needs.
+The template includes **all** of the potential Chrome extension pages.
+
+You likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
@@ -84,13 +86,13 @@ If you need to declare extra HTML pages beyond those the manifest accommodates, 
 
 This example includes a welcome page to open when the user installs the extension.
 
-
 CSS files in the `src/pages/*` directories are not necessary. They are left in there in case you want 
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
 
 # Tech Docs <a name="tech"></a>
+- [Vite](https://vitejs.dev/)
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
 - [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
 - [Rollup](https://rollupjs.org/guide/en/)

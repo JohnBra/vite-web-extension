@@ -1,6 +1,5 @@
 {
   "name": "vite-web-extension",
-  "displayName": "Web Extension Boilerplate",
   "version": "1.1.0",
   "description": "A simple chrome extension template with Vite, React, TypeScript and Tailwind CSS.",
   "license": "MIT",
