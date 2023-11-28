@@ -2,15 +2,11 @@
 <img src="public/icon-128.png" alt="logo"/>
 <h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS</h1>
 
-<h2>
+<h5>
 This is a side product of my Chrome Extension <a target="_blank" rel="noopener noreferrer" href="https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk">Supatabs</a>.
 Supatabs is a 🔥🔥 BLAZINGLY FAST 🔥🔥 free alternative to OneTab with support for chrome tab groups and searching through tabs.
-</h2>
+</h5>
 
-<h2>
-If you tend to have thousands of tabs open, are a OneTab user, or use any other tab manager 
-make sure to check it out <a target="_blank" rel="noopener noreferrer" href="https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk">here</a>!
-</h2>
 </div>
 
 ## Table of Contents
@@ -56,7 +52,7 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 - [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/)
 - [Chrome Extension Manifest Version 3](https://developer.chrome.com/docs/extensions/mv3/intro/)
-- Github Action to build and zip your extension (manual trigger)
+- [Github Action](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml) to build and zip your extension (manual trigger)
 
 ## Usage <a name="usage"></a>
 
@@ -74,9 +70,7 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
 ### Customization
-The template includes **all** of the potential Chrome extension pages.
-
-You likely have to customize it to fit your needs.
+The template includes **all** of the Chrome extension pages. You will likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
@@ -90,6 +84,21 @@ CSS files in the `src/pages/*` directories are not necessary. They are left in t
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
+
+### Publish your extension
+To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item in entry 
+in the Chrome Web Store.
+
+This repo includes a Github Action Workflow to create a 
+[optimized prod build and create the zip file](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml).
+
+To run the workflow do the following:
+1. Go to the **"Actions"** tab in your forked repository from this template
+2. In the left sidebar click on **"Build and Zip Extension"**
+3. Click on **"Run Workflow"** and select the main branch, then **"Run Workflow"**
+4. Refresh the page and click the most recent run
+5. In the summary page **"Artifacts"** section click on the generated **"vite-web-extension"**
+6. Upload this file to the Chrome Web Store as described [here](https://developer.chrome.com/docs/webstore/publish/)
 
 # Tech Docs <a name="tech"></a>
 - [Vite](https://vitejs.dev/)
