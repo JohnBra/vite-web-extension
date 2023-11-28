@@ -26,11 +26,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Zip artifacts
-        run: zip extension.zip ./dist -r
-
       - name: Upload extension artifacts
         uses: actions/upload-artifact@v3
         with:
           name: vite-web-extension
-          path: extension.zip
+          path: dist
