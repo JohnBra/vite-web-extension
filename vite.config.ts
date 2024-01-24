@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import fs from 'fs';
 import { defineConfig } from 'vite';
+import type { PluginOption, ResolvedConfig } from 'vite'
 import { crx, ManifestV3Export } from '@crxjs/vite-plugin';
 
 import manifest from './manifest.json';
@@ -40,6 +41,40 @@ function stripDevIcons (apply: boolean) {
   }
 }
 
+// plugin to support i18n 
+function crxI18n (options: {src: string}): PluginOption {
+  const getJsonFiles = (dir: string): Array<string> => {
+    const files = fs.readdirSync(dir, {recursive: true}) as string[]
+    return files.filter(file => !!file && file.endsWith('.json'))
+  }
+  const entry = resolve(__dirname, options.src)
+  const localeFiles = getJsonFiles(entry)
+  const files = localeFiles.map(file => {
+    return {
+      id: '',
+      fileName: file,
+      source: fs.readFileSync(resolve(entry, file))
+    }
+  })
+  return {
+    name: 'crx-i18n',
+    enforce: 'pre',
+    buildStart: {
+      order: 'post',
+      handler() {
+        files.forEach((file) => {
+            const refId = this.emitFile({
+              type: 'asset',
+              source: file.source,
+              fileName: '_locales/'+file.fileName
+            })
+            file.id = refId
+        })
+      }
+    }
+  }
+}
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -56,7 +91,8 @@ export default defineConfig({
         injectCss: true,
       }
     }),
-    stripDevIcons(isDev)
+    stripDevIcons(isDev),
+    crxI18n({src: './src/locales'})
   ],
   publicDir,
   build: {
