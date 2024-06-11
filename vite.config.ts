@@ -1,67 +1,68 @@
-import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
-import fs from 'fs';
-import { defineConfig } from 'vite';
-import { crx, ManifestV3Export } from '@crxjs/vite-plugin';
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
+import { defineConfig } from "vite";
+import { crx, defineManifest } from "@crxjs/vite-plugin";
 
-import manifest from './manifest.json';
-import devManifest from './manifest.dev.json';
-import pkg from './package.json';
+import pkg from "./package.json";
 
-const root = resolve(__dirname, 'src');
-const pagesDir = resolve(root, 'pages');
-const assetsDir = resolve(root, 'assets');
-const outDir = resolve(__dirname, 'dist');
-const publicDir = resolve(__dirname, 'public');
+const root = resolve(__dirname, "src");
+const pagesDir = resolve(root, "pages");
+const assetsDir = resolve(root, "assets");
 
-const isDev = process.env.__DEV__ === 'true';
-
-const extensionManifest = {
-  ...manifest,
-  ...(isDev ? devManifest : {} as ManifestV3Export),
-  name: isDev ? `DEV: ${ manifest.name }` : manifest.name,
-  version: pkg.version,
-};
-
-// plugin to remove dev icons from prod build
-function stripDevIcons (apply: boolean) {
-  if (apply) return null
-
+export default defineConfig(({ mode }) => {
   return {
-    name: 'strip-dev-icons',
-    resolveId (source: string) {
-      return source === 'virtual-module' ? source : null
+    root: ".",
+    server: {
+      port: 5000,
     },
-    renderStart (outputOptions: any, inputOptions: any) {
-      const outDir = outputOptions.dir
-      fs.rm(resolve(outDir, 'dev-icon-32.png'), () => console.log(`Deleted dev-icon-32.png frm prod build`))
-      fs.rm(resolve(outDir, 'dev-icon-128.png'), () => console.log(`Deleted dev-icon-128.png frm prod build`))
-    }
-  }
-}
-
-export default defineConfig({
-  resolve: {
-    alias: {
-      '@src': root,
-      '@assets': assetsDir,
-      '@pages': pagesDir,
+    resolve: {
+      alias: {
+        "@src": root,
+        "@assets": assetsDir,
+        "@pages": pagesDir,
+      },
     },
-  },
-  plugins: [
-    react(),
-    crx({
-      manifest: extensionManifest as ManifestV3Export,
-      contentScripts: {
-        injectCss: true,
-      }
-    }),
-    stripDevIcons(isDev)
-  ],
-  publicDir,
-  build: {
-    outDir,
-    sourcemap: isDev,
-    emptyOutDir: !isDev
-  },
+    plugins: [
+      react(),
+      crx({
+        manifest: defineManifest({
+          manifest_version: 3,
+          version: pkg.version,
+          name: mode === "development" ? `DEV: myname` : "myname",
+          description: "description",
+          options_ui: {
+            page: "src/pages/options/index.html",
+          },
+          background: {
+            service_worker: "src/pages/background/index.ts",
+            type: "module",
+          },
+          action: {
+            default_popup: "src/pages/popup/index.html",
+            default_icon: {
+              "32": "icon-32.png",
+            },
+          },
+          chrome_url_overrides: {
+            newtab: "src/pages/newtab/index.html",
+          },
+          icons: {
+            "128": "icon-128.png",
+          },
+          permissions: ["activeTab"],
+          content_scripts: [
+            {
+              matches: ["http://*/*", "https://*/*", "<all_urls>"],
+              js: ["src/pages/content/index.tsx"],
+              css: ["contentStyle.css"],
+            },
+          ],
+          devtools_page: "src/pages/devtools/index.html",
+        }),
+        contentScripts: {
+          injectCss: true,
+        },
+      }),
+    ],
+  };
 });
