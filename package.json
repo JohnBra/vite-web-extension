@@ -13,6 +13,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "react": "^18.3.1",
     "react-aiwriter": "^1.0.0",
     "react-dom": "^18.3.1",

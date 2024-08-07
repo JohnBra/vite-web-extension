@@ -1,26 +1,34 @@
 import { useEffect, useState } from 'react';
 import AIWriter from "react-aiwriter";
 import useGptCompletions from '../content/hooks/useGpt';
+import { Container } from './styled';
 
 
 export default function Popup(): JSX.Element {
-  const [msg, setMsg] = useState("")
-  const {resText} = useGptCompletions({ text: msg })
+  const [text, setText] = useState("")
+  const [mode, setMode] = useState("")
+  const { resText, is_error, is_loading } = useGptCompletions({ text, mode })
 
   /** Listen all actions of the extension */
   useEffect(() => {
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       if (request.action === "translate") {
-        setMsg(() => request.msg)
+        const PRONT_MODE = request.context["mode"];
+        const TEXT = request.context["text"];
+
+        setMode(() => PRONT_MODE)
+        setText(() => TEXT)
       }
     });
   }, [])
 
   return (
-    <div>
-      <h1>Traducelo al ingles: "{msg}"</h1>
+    <Container>
+      <h1>{mode}: "{text}"</h1>
       <AIWriter>
-        <p>{resText}</p>
+        {is_error && (<h1>Gpt service errror.</h1>)}
+        {!is_error && is_loading && (<p>...</p>)}
+        {!is_error && (<p>{resText}</p>)}
       </AIWriter>
       {/* <button onClick={() => {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -30,6 +38,6 @@ export default function Popup(): JSX.Element {
           });
         });
       }}>Hello</button> */}
-    </div>
+    </Container>
   );
 }

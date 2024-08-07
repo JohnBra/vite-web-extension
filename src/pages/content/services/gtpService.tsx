@@ -1,8 +1,6 @@
 import { SETTINGS } from "@src/settings";
-import { TRANSLATE_PROMT } from "../promts/translate";
 
-
-export function completionService(text: string) {
+export function completionService(text: string, promt: string) {
   return fetch(SETTINGS.gtp_completions_service, {
     method: "POST",
     headers: {
@@ -14,7 +12,7 @@ export function completionService(text: string) {
       "messages": [
         {
           "role": "system",
-          "content": TRANSLATE_PROMT
+          "content": promt
         },
         {
           "role": "user",

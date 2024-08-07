@@ -16,7 +16,9 @@ export default function ContentApp() {
 
   useEffect(() => {
     if (text && cursorX > 0 && cursorY > 0) {
-      setOpen(() => true)
+      setTimeout(() => {
+        setOpen(() => true)
+      }, 100);
     }
   }, [text, cursorX, cursorY])
 
