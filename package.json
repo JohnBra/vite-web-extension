@@ -14,6 +14,7 @@
   "type": "module",
   "dependencies": {
     "react": "^18.3.1",
+    "react-aiwriter": "^1.0.0",
     "react-dom": "^18.3.1",
     "webextension-polyfill": "^0.11.0"
   },
