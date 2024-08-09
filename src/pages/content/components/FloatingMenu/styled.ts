@@ -8,11 +8,32 @@ export const Container = styled.div`
   flex-direction: row;
   z-index: 99999;
   padding: 4px;
-  border-radius: 10px;
-  background: red;
-  gap: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 5px;
+  background: #c3c4fd;
+  gap: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+`;
+
+export const IaButton = styled.div`
+  cursor: pointer;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+`;
+
+export const Icon = styled.img`
+  width: 13px;
+  height: 13px;
+`;
+
+export const Label = styled.span`
+  font-size: 10px;
+  color: black;
 `;
 
 export const Screen = styled.div`

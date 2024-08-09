@@ -6,23 +6,25 @@ export const Container = styled.div`
 `;
 
 export const SelectedOption = styled.div`
-  padding: 5px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   cursor: pointer;
   text-transform: capitalize;
+  font-size: 10px;
+  color: black;
 `;
 
 export const OptionsList = styled.div`
   position: absolute;
   background-color: white;
+  border-radius: 5px;
   border: 1px solid #ccc;
   z-index: 1;
-  width: 100%;
 `;
 
 export const Option = styled.div`
-  padding: 5px;
   cursor: pointer;
   text-transform: capitalize;
+  font-size: 10px;
+  color: black;
 `;

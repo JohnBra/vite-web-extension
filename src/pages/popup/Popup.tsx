@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Container, Message, MessageList } from './styled';
+import { USER_ROLE } from './constants';
 import AIWriter from "react-aiwriter";
 import useGptCompletions from '../content/hooks/useGpt';
-import { Container } from './styled';
 
 
 export default function Popup(): JSX.Element {
-  const [text, setText] = useState("")
-  const [mode, setMode] = useState("")
-  const { resText, is_error, is_loading } = useGptCompletions({ text, mode })
+  const chatRef = useRef<HTMLInputElement>(null);
+  const [mode, setMode] = useState<string>("")
+  const { is_error, is_loading, send, context } = useGptCompletions()
 
   /** Listen all actions of the extension */
   useEffect(() => {
@@ -15,21 +16,40 @@ export default function Popup(): JSX.Element {
       if (request.action === "translate") {
         const PRONT_MODE = request.context["mode"];
         const TEXT = request.context["text"];
-
         setMode(() => PRONT_MODE)
-        setText(() => TEXT)
+        send(TEXT, PRONT_MODE)
       }
     });
   }, [])
 
   return (
     <Container>
-      <h1>{mode}: "{text}"</h1>
-      <AIWriter>
-        {is_error && (<h1>Gpt service errror.</h1>)}
-        {!is_error && is_loading && (<p>...</p>)}
-        {!is_error && (<p>{resText}</p>)}
-      </AIWriter>
+      {/* Messages list */}
+      <MessageList>
+        {context.map((message, k) => {
+          return (
+            <Message
+              key={k}
+              style={{
+                justifyContent: message.role === USER_ROLE ? "flex-end" : "flex-start",
+                background: message.role === USER_ROLE ? "#3D82F6" : "#F0F0F0", borderRadius: "10px",
+              }}
+            >
+              <AIWriter>
+                {message.content}
+              </AIWriter>
+            </Message>
+          )
+        })}
+      </MessageList>
+
+      <h1>{is_error && "Hay un error :("}</h1>
+      <input type='text' placeholder='Escribe algo' ref={chatRef} />
+      <button onClick={() => {
+        if (chatRef.current && !is_loading) {
+          send(chatRef.current.value, mode)
+        }
+      }}>{is_loading ? "Loading ..." : "Enviar"}</button>
       {/* <button onClick={() => {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
           chrome.tabs.sendMessage(tabs[0].id as any, {

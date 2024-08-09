@@ -5,3 +5,14 @@ export const Container = styled.div`
   height: 500px;
   padding: 10px;
 `;
+
+export const MessageList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const Message = styled.div`
+  display: flex;
+  padding: 10px;
+`;

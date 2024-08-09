@@ -1,6 +1,7 @@
 import { SETTINGS } from "@src/settings";
+import { ChatContextType } from "../hooks/types";
 
-export function completionService(text: string, promt: string) {
+export function completionService(context: ChatContextType[], promt: string) {
   return fetch(SETTINGS.gtp_completions_service, {
     method: "POST",
     headers: {
@@ -14,10 +15,7 @@ export function completionService(text: string, promt: string) {
           "role": "system",
           "content": promt
         },
-        {
-          "role": "user",
-          "content": text
-        }
+        ...context
       ]
     })
   })
