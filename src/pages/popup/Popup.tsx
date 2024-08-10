@@ -3,6 +3,7 @@ import { Container, Message, MessageList } from './styled';
 import { USER_ROLE } from './constants';
 import AIWriter from "react-aiwriter";
 import useGptCompletions from '../content/hooks/useGpt';
+import { CLOSE_MENU_ACTION, START_CHAT_ACTION } from '../content/constants';
 
 
 export default function Popup(): JSX.Element {
@@ -12,8 +13,14 @@ export default function Popup(): JSX.Element {
 
   /** Listen all actions of the extension */
   useEffect(() => {
-    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-      if (request.action === "translate") {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id as any, {
+        action: CLOSE_MENU_ACTION,
+      });
+    });
+
+    chrome.runtime.onMessage.addListener((request) => {
+      if (request.action === START_CHAT_ACTION) {
         const PRONT_MODE = request.context["mode"];
         const TEXT = request.context["text"];
         setMode(() => PRONT_MODE)

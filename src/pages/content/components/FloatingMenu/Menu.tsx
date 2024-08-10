@@ -2,43 +2,39 @@ import { LEFT_SPACING, TOP_SPACING } from "./constants";
 import { MenuTypes } from "./types";
 import { useState } from "react";
 import { Container, IaButton, Icon, Label } from "./styled";
+import { SLEEP_TIME_OUT, START_CHAT_ACTION } from "../../constants";
 import MenuOptions from "../MenuOptions";
-import ia from '@assets/svg/ia.svg';
+import IaIcon from '@assets/svg/ia.svg';
 
 function Menu({ x, y, text }: MenuTypes): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<String | null>(null)
   return (
     <Container
-      onMouseDown={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-      }}
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-      }}
+      onMouseDown={(e) => e.preventDefault()}
+      onClick={(e) => e.preventDefault()}
       style={{
         top: `${y + TOP_SPACING}px`,
         left: `${x + LEFT_SPACING}px`,
       }}
     >
-      <MenuOptions onSelect={(option) => { setSelectedOption(() => option) }} />
+      <MenuOptions onSelect={(option) => setSelectedOption(() => option)} />
       <IaButton
         onClick={() => {
           if (selectedOption) {
             chrome.runtime.sendMessage({ action: "openPopup" });
             setTimeout(() => {
               chrome.runtime.sendMessage({
-                action: "translate", context: {
+                action: START_CHAT_ACTION,
+                context: {
                   text: text,
                   mode: selectedOption
                 }
               });
-            }, 90);
+            }, SLEEP_TIME_OUT);
           }
         }}
       >
-        <Icon src={ia} />
+        <Icon src={IaIcon} />
         <Label>IA</Label>
       </IaButton>
     </Container>
