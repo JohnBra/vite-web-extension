@@ -13,8 +13,10 @@
   },
   "type": "module",
   "dependencies": {
-    "openai": "^4.55.1",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "react": "^18.3.1",
+    "react-aiwriter": "^1.0.0",
     "react-dom": "^18.3.1",
     "webextension-polyfill": "^0.11.0"
   },
