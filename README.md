@@ -74,7 +74,7 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 2. Change `name` and `description` in `manifest.json`
 3. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
 4. Run `yarn` or `npm i` (check your node version >= 16)
-5. Run `yarn dev` or `npm run dev` _Firefox does not support hot reloading_
+5. Run `yarn dev` or `npm run dev` (_Firefox does not support hot reloading_)
 6. Load Extension in Firefox
    1. Open - Firefox browser
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
