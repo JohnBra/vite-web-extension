@@ -32,14 +32,7 @@ This boilerplate is meant to be a minimal quick start for creating chrome extens
 Built for:
 > For improved DX and rapid building vite and nodemon are used.
 
-> Chrome does not accept manifest v2 extensions since Jan 2022, therefore this template uses manifest v3.
-
-> Firefox + other browsers don't yet support manifest v3, so cross browser usage is not encouraged.
-
-* Read more about Chrome manifest v2 support [here](https://developer.chrome.com/docs/extensions/mv2/).
-* Read more about Firefox Manifest v3 support [here](https://discourse.mozilla.org/t/manifest-v3/94564).
-
-As soon as Firefox supports manifest v3, support will be added in this repo as well.
+You can build dist files for both Chrome and Firefox with manifest v3.
 
 Oh by the way ... I also implemented a chrome local/sync storage hook for react, which works well with this 
 template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
@@ -62,20 +55,35 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 ## Usage <a name="usage"></a>
 
 ### Setup <a name="setup"></a>
-1. Clone this repository｀
+
+Chrome:
+1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
 3. Run `yarn` or `npm i` (check your node version >= 16)
 4. Run `yarn dev` or `npm run dev`
 5. Load Extension in Chrome
    1. Open - Chrome browser
-   2. Access - chrome://extensions
+   2. Access - [chrome://extensions](chrome://extensions)
    3. Tick - Developer mode
    4. Find - Load unpacked extension
    5. Select - `dist` folder in this project (after dev or build)
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
+Firefox:
+1. Clone this repository or click "Use this template"
+2. Change `name` and `description` in `manifest.json`
+3. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
+4. Run `yarn` or `npm i` (check your node version >= 16)
+5. Run `yarn dev` or `npm run dev` _Firefox does not support hot reloading_
+6. Load Extension in Firefox
+   1. Open - Firefox browser
+   2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
+   4. Click - Load temporary Add-on
+   5. Select - any file in `dist` folder in this project (after dev or build)
+6. If you want to build in production, Just run `yarn build` or `npm run build`.
+
 ### Customization
-The template includes **all** of the Chrome extension pages. You will likely have to customize it to fit your needs.
+The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
@@ -115,7 +123,7 @@ To run the workflow do the following:
 
 # Credit <a name="credit"></a>
 Heavily inspired by [Jonghakseo's vite chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite). 
-It uses SASS instead of TailwindCSS if you want to check it out.
+It uses SASS instead of TailwindCSS and is slightly less minimalist in case you want to check it out.
 
 # Contributing <a name="contributing"></a>
 Feel free to open PRs or raise issues!

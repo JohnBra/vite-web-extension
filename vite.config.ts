@@ -24,8 +24,8 @@ const extensionManifest = {
 };
 
 // plugin to remove dev icons from prod build
-function stripDevIcons (apply: boolean) {
-  if (apply) return null
+function stripDevIcons (isDev: boolean) {
+  if (isDev) return null
 
   return {
     name: 'strip-dev-icons',
@@ -34,11 +34,30 @@ function stripDevIcons (apply: boolean) {
     },
     renderStart (outputOptions: any, inputOptions: any) {
       const outDir = outputOptions.dir
-      fs.rm(resolve(outDir, 'dev-icon-32.png'), () => console.log(`Deleted dev-icon-32.png frm prod build`))
-      fs.rm(resolve(outDir, 'dev-icon-128.png'), () => console.log(`Deleted dev-icon-128.png frm prod build`))
+      fs.rm(resolve(outDir, 'dev-icon-32.png'), () => console.log(`Deleted dev-icon-32.png from prod build`))
+      fs.rm(resolve(outDir, 'dev-icon-128.png'), () => console.log(`Deleted dev-icon-128.png from prod build`))
     }
   }
 }
+
+/*
+* By default this vite config produces a dist for chrome
+* To build for firefox change the "browser" prop in the crx config below to 'firefox'
+* AND ALSO change the "background" config in the manifest.json to the following:
+* 
+{
+  "manifest_version": 3,
+  "name": "<name in manifest.json>",
+  "description": "<description in manifest.json>",
+  ...
+  "background": 
+    "scripts": [ "service-worker-loader.js" ]
+  },
+  ...
+}
+* NOTE: remove "type" prop and "service_worker" prop (string val) 
+* then replace with "scripts" prop (array val)
+*/
 
 export default defineConfig({
   resolve: {
@@ -52,6 +71,7 @@ export default defineConfig({
     react(),
     crx({
       manifest: extensionManifest as ManifestV3Export,
+      browser: 'chrome', // <-- change value to 'firefox' or 'chrome'
       contentScripts: {
         injectCss: true,
       }
