@@ -28,13 +28,13 @@ make sure to check it out <a target="_blank" rel="noopener noreferrer" href="htt
 ## Intro <a name="intro"></a>
 This boilerplate is meant to be a minimal quick start for creating chrome/firefox extensions using React, Typescript and Tailwind CSS.
 
-Built for:
-> For improved DX and rapid building vite and nodemon are used.
+It includes all possible pages such as **new tab**, **dev panel**, **pop up**, etc., as well as corresponding manifest settings by default.
+You will likely have to customize/delete some of the pages (see docs below).
 
 You can build dist files for both Chrome and Firefox with manifest v3.
 
-Oh by the way ... I also implemented a chrome local/sync storage hook for react, which works well with this 
-template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
+If you are looking for a React focused way to access the local storage, I also implemented a chrome local/sync storage hook. The hook works
+well with this template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
 
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
@@ -60,7 +60,7 @@ template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f80
    3. Tick - Developer mode
    4. Find - Load unpacked extension
    5. Select - `dist` folder in this project (after dev or build)
-6. If you want to build in production, Just run `yarn build` or `npm run build`.
+6. If you want to build for production, Just run `yarn build` or `npm run build`.
 
 #### Firefox
 By default this template generates a dist for Chrome, but you can also generate a dist for Firefox
@@ -79,7 +79,7 @@ This is the complete Firefox setup from a fresh project:
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
    4. Click - Load temporary Add-on
    5. Select - any file in `dist` folder in this project (after dev or build)
-8. If you want to build in production, Just run `yarn build` or `npm run build`.
+8. If you want to build for production, Just run `yarn build` or `npm run build`.
 
 ### Customization
 The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
