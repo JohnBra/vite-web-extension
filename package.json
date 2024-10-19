@@ -1,7 +1,7 @@
 {
   "name": "vite-web-extension",
-  "version": "1.2.0",
-  "description": "A simple chrome extension template with Vite, React, TypeScript and Tailwind CSS.",
+  "version": "1.3.0",
+  "description": "A simple chrome & firefox extension template with Vite, React, TypeScript and Tailwind CSS.",
   "license": "MIT",
   "repository": {
     "type": "git",

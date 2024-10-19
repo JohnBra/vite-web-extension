@@ -1,6 +1,6 @@
 <div align="center">
 <img src="public/icon-128.png" alt="logo"/>
-<h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS</h1>
+<h1> Minimalist Chrome/Firefox Extension Boilerplate with<br/>React + Vite + TypeScript + TailwindCSS</h1>
 
 <h5>
 This is a side product of my Chrome Extension <a target="_blank" rel="noopener noreferrer" href="https://chrome.google.com/webstore/detail/supatabs/icbcnjlaegndjabnjbaeihnnmidbfigk">Supatabs</a>.
@@ -27,7 +27,7 @@ make sure to check it out <a target="_blank" rel="noopener noreferrer" href="htt
 
 
 ## Intro <a name="intro"></a>
-This boilerplate is meant to be a minimal quick start for creating chrome extensions using React, Typescript and Tailwind CSS.
+This boilerplate is meant to be a minimal quick start for creating chrome/firefox extensions using React, Typescript and Tailwind CSS.
 
 Built for:
 > For improved DX and rapid building vite and nodemon are used.
