@@ -17,7 +17,6 @@ make sure to check it out <a target="_blank" rel="noopener noreferrer" href="htt
 ## Table of Contents
 
 - [Intro](#intro)
-- [Why another boilerplate?](#why)
 - [Features](#features)
 - [Usage](#usage)
   - [Setup](#setup) 
@@ -36,13 +35,6 @@ You can build dist files for both Chrome and Firefox with manifest v3.
 
 Oh by the way ... I also implemented a chrome local/sync storage hook for react, which works well with this 
 template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
-
-## Why another boilerplate? <a name="why"></a>
-I have used webpack react boilerplates and found it too hard to configure.
-
-Vite is mega easy to understand which makes it easier to get into and to maintain for others.
-
-I couldn't find another minimal boilerplate for React, TypeScript and Tailwind CSS. So here it is.
 
 ## Features <a name="features"></a>
 - [React 18](https://reactjs.org/)
