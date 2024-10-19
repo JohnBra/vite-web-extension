@@ -48,7 +48,8 @@ template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f80
 
 ### Setup <a name="setup"></a>
 
-#### Chrome:
+#### Chrome
+
 1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
 3. Run `yarn` or `npm i` (check your node version >= 16)
@@ -61,18 +62,24 @@ template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f80
    5. Select - `dist` folder in this project (after dev or build)
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
-#### Firefox:
+#### Firefox
+By default this template generates a dist for Chrome, but you can also generate a dist for Firefox
+by simply changing a couple of things in the config files.
+
+This is the complete Firefox setup from a fresh project:
+
 1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
-3. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
-4. Run `yarn` or `npm i` (check your node version >= 16)
-5. Run `yarn dev` or `npm run dev` (_Firefox does not support hot reloading_)
-6. Load Extension in Firefox
+3. Change the `browser` target in `vite.config.ts` to `firefox`
+4. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
+5. Run `yarn` or `npm i` (check your node version >= 16)
+6. Run `yarn dev` or `npm run dev` (_Firefox does not support hot reloading_)
+7. Load Extension in Firefox
    1. Open - Firefox browser
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
    4. Click - Load temporary Add-on
    5. Select - any file in `dist` folder in this project (after dev or build)
-6. If you want to build in production, Just run `yarn build` or `npm run build`.
+8. If you want to build in production, Just run `yarn build` or `npm run build`.
 
 ### Customization
 The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
