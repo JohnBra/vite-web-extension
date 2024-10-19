@@ -56,7 +56,7 @@ I couldn't find another minimal boilerplate for React, TypeScript and Tailwind C
 
 ### Setup <a name="setup"></a>
 
-Chrome:
+#### Chrome:
 1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
 3. Run `yarn` or `npm i` (check your node version >= 16)
@@ -69,7 +69,7 @@ Chrome:
    5. Select - `dist` folder in this project (after dev or build)
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
-Firefox:
+#### Firefox:
 1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
 3. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
