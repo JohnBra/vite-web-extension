@@ -90,8 +90,6 @@ E.g. you don't want the newtab page to activate whenever you open a new tab:
 
 If you need to declare extra HTML pages beyond those the manifest accommodates, place them in the Vite config under build.rollupOptions.input.
 
-This example includes a welcome page to open when the user installs the extension.
-
 CSS files in the `src/pages/*` directories are not necessary. They are left in there in case you want 
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
