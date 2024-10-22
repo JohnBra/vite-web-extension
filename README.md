@@ -58,7 +58,7 @@ well with this template. [Check it out here](https://gist.github.com/JohnBra/c81
    3. Tick - Developer mode
    4. Find - Load unpacked extension
    5. Select - `dist` folder in this project (after dev or build)
-6. If you want to build for production, Just run `yarn build` or `npm run build`.
+6. If you want to build for production, run `yarn build` or `npm run build`.
 
 #### Firefox
 By default this template generates a dist for Chrome, but you can also generate a dist for Firefox
@@ -77,7 +77,7 @@ This is the complete Firefox setup from a fresh project:
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
    4. Click - Load temporary Add-on
    5. Select - any file in `dist` folder in this project (after dev or build)
-8. If you want to build for production, Just run `yarn build` or `npm run build`.
+8. If you want to build for production, run `yarn build` or `npm run build`.
 
 ### Customization
 The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
