@@ -68,7 +68,7 @@ This is the complete Firefox setup from a fresh project:
 
 1. Clone this repository or click "Use this template"
 2. Change `name` and `description` in `manifest.json`
-3. Change the `browser` target in `vite.config.ts` to `firefox`
+3. Change the `browser` target in `vite.config.ts` to `'firefox'`
 4. Remove `service_worker` and `type` prop in `background` object of `manifest.json` and replace with `"scripts": [ "service-worker-loader.js" ]`
 5. Run `yarn` or `npm i` (check your node version >= 16)
 6. Run `yarn dev` or `npm run dev` (_Firefox does not support hot reloading_)
@@ -94,7 +94,7 @@ to use it in combination with Tailwind CSS. **Feel free to delete them**.
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
 
 ### Publish your extension
-To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item in entry 
+To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item 
 in the Chrome Web Store.
 
 This repo includes a Github Action Workflow to create a 
