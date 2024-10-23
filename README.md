@@ -18,6 +18,8 @@ If you tend to have tons of tabs open, or are a OneTab user, make sure to check 
 - [Features](#features)
 - [Usage](#usage)
   - [Setup](#setup) 
+  - [Customization](#customization)
+  - [Publish](#publish)
 - [Tech Docs](#tech)
 - [Credit](#credit)
 - [Contributing](#contributing)
@@ -79,7 +81,7 @@ This is the complete Firefox setup from a fresh project:
    5. Select - any file in `dist` folder in this project (after dev or build)
 8. If you want to build for production, run `yarn build` or `npm run build`.
 
-### Customization
+### Customization <a name="customization"></a>
 The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
@@ -93,7 +95,7 @@ to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
 
-### Publish your extension
+### Publish your extension <a name="publish"></a>
 To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item 
 in the Chrome Web Store.
 
