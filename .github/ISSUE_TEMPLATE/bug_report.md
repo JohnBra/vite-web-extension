@@ -23,6 +23,7 @@ A clear and concise description of what you expected to happen.
 
 **Steps/attempts taken to fix**
 Add the steps you have attempted to fix your problem here.
+NOTE: You should always try and look for a fix first.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
