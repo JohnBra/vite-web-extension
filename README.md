@@ -78,7 +78,7 @@ This is the complete Firefox setup from a fresh project:
    1. Open - Firefox browser
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
    4. Click - Load temporary Add-on
-   5. Select - any file in `dist` folder in this project (after dev or build)
+   5. Select - any file in `dist` folder (i.e. `manifest.json`) in this project (after dev or build)
 8. If you want to build for production, run `yarn build` or `npm run build`.
 
 ### Customization <a name="customization"></a>
