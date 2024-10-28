@@ -22,7 +22,7 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Steps/attempts taken to fix**
-Add the steps you have attempted to fix your problem here.
+I've tried X, Y, and Z...but it's not working. What should I do?
 NOTE: You should always try and look for a fix first.
 
 **Screenshots**
