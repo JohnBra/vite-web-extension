@@ -60,7 +60,7 @@ well with this template. [Check it out here](https://gist.github.com/JohnBra/c81
    3. Tick - Developer mode
    4. Find - Load unpacked extension
    5. Select - `dist` folder in this project (after dev or build)
-6. If you want to build for production, run `yarn build` or `npm run build`.
+6. To create an optimized production build, run `yarn build` or `npm run build`.
 
 #### Firefox
 By default this template generates a dist for Chrome, but you can also generate a dist for Firefox
@@ -79,9 +79,10 @@ This is the complete Firefox setup from a fresh project:
    2. Access - [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
    4. Click - Load temporary Add-on
    5. Select - any file in `dist` folder (i.e. `manifest.json`) in this project (after dev or build)
-8. If you want to build for production, run `yarn build` or `npm run build`.
+8. To create an optimized production build, run `yarn build` or `npm run build`.
 
 ### Customization <a name="customization"></a>
+#### Adding / removing pages
 The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.). You will likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
@@ -94,6 +95,17 @@ CSS files in the `src/pages/*` directories are not necessary. They are left in t
 to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured as usual in the `tailwind.config.cjs` file. See doc link below.
+
+#### Internationalization (i18n)
+To enable internationalization set the `localize` flag in the `vite.config.ts` to `true`.
+
+The template includes a directory `locales` with the basic setup for english i18n. Follow the
+instructions in the [official docs](https://developer.chrome.com/docs/extensions/reference/api/i18n#description) 
+to add other translations and retrieve them in the extension.
+
+If you don't need i18n you can ignore the `locales` directory for now, as it won't
+be copied into the build folder unless the `localize` flag is set to `true`.
+
 
 ### Publish your extension <a name="publish"></a>
 To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item 
@@ -114,13 +126,14 @@ To run the workflow do the following:
 - [Vite](https://vitejs.dev/)
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
 - [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
+- [Chrome Extension i18n](https://developer.chrome.com/docs/extensions/reference/api/i18n#description)
 - [Rollup](https://rollupjs.org/guide/en/)
 - [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin)
 - [Tailwind CSS](https://tailwindcss.com/docs/configuration)
 
 # Credit <a name="credit"></a>
 Heavily inspired by [Jonghakseo's vite chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite). 
-It uses SASS instead of TailwindCSS and is slightly less minimalist in case you want to check it out.
+It uses SASS instead of TailwindCSS and is ~~slightly~~ _a lot_ less minimalist in case you want to check it out.
 
 # Contributing <a name="contributing"></a>
 Feel free to open PRs or raise issues!

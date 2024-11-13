@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
+import { stripDevIcons, crxI18n } from './custom-vite-plugins';
 import { resolve } from 'path';
-import fs from 'fs';
 import { defineConfig } from 'vite';
 import { crx, ManifestV3Export } from '@crxjs/vite-plugin';
 
@@ -15,30 +15,19 @@ const outDir = resolve(__dirname, 'dist');
 const publicDir = resolve(__dirname, 'public');
 
 const isDev = process.env.__DEV__ === 'true';
+// set this flag to true, if you want localization support
+const localize = false;
 
 const extensionManifest = {
   ...manifest,
-  ...(isDev ? devManifest : {} as ManifestV3Export),
-  name: isDev ? `DEV: ${ manifest.name }` : manifest.name,
   version: pkg.version,
+  ...(isDev ? devManifest : {} as ManifestV3Export),
+  ...(localize ? {
+    name: '__MSG_extName__',
+    description: '__MSG_extDescription__',
+    default_locale : 'en'
+  } : {})
 };
-
-// plugin to remove dev icons from prod build
-function stripDevIcons (isDev: boolean) {
-  if (isDev) return null
-
-  return {
-    name: 'strip-dev-icons',
-    resolveId (source: string) {
-      return source === 'virtual-module' ? source : null
-    },
-    renderStart (outputOptions: any, inputOptions: any) {
-      const outDir = outputOptions.dir
-      fs.rm(resolve(outDir, 'dev-icon-32.png'), () => console.log(`Deleted dev-icon-32.png from prod build`))
-      fs.rm(resolve(outDir, 'dev-icon-128.png'), () => console.log(`Deleted dev-icon-128.png from prod build`))
-    }
-  }
-}
 
 /*
 * By default this vite config produces a dist for chrome
@@ -76,7 +65,11 @@ export default defineConfig({
         injectCss: true,
       }
     }),
-    stripDevIcons(isDev)
+    stripDevIcons(isDev),
+    crxI18n({
+      localize,
+      src: './src/locales'
+    })
   ],
   publicDir,
   build: {
