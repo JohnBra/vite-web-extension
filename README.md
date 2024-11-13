@@ -103,7 +103,7 @@ The template includes a directory `locales` with the basic setup for english i18
 instructions in the [official docs](https://developer.chrome.com/docs/extensions/reference/api/i18n#description) 
 to add other translations and retrieve them in the extension.
 
-If you don't need i18n you can ignore the `locales` directory for now, as it won't
+If you don't need i18n you can ignore the `locales` directory for, as it won't
 be copied into the build folder unless the `localize` flag is set to `true`.
 
 
