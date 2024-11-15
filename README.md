@@ -129,19 +129,19 @@ to add other translations and retrieve them in the extension.
 If you don't need i18n you can ignore the `locales` directory until you need it, as it won't
 be copied into the build folder unless the `localize` flag is set to `true`.
 
-### Publish your extension <a name="publish"></a>
+### Publish your extension to the CWS<a name="publish"></a>
 To upload an extension to the Chrome store you have to pack (zip) it and then upload it to your item 
 in the Chrome Web Store.
 
 This repo includes a Github Action Workflow to create a 
-[optimized prod build and create the zip file](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml).
+[optimized prod build and the zip file](https://github.com/JohnBra/vite-web-extension/actions/workflows/ci.yml).
 
 To run the workflow do the following:
 1. Go to the **"Actions"** tab in your forked repository from this template
-2. In the left sidebar click on **"Build and Zip Extension"**
+2. In the left sidebar click on **"Build and Zip Chrome Extension"**
 3. Click on **"Run Workflow"** and select the main branch, then **"Run Workflow"**
 4. Refresh the page and click the most recent run
-5. In the summary page **"Artifacts"** section click on the generated **"vite-web-extension"**
+5. In the summary page **"Artifacts"** section click on the generated **"vite-web-extension-chrome"**
 6. Upload this file to the Chrome Web Store as described [here](https://developer.chrome.com/docs/webstore/publish/)
 
 # Tech Docs <a name="tech"></a>
