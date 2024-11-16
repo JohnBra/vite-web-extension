@@ -61,7 +61,7 @@ for Chrome by default.
 
 Running a `dev` command will build your extension and watch for changes in the 
 source files. Changing the source files will refresh the corresponding 
-`dist_[chrome|firefox]` folder.
+`dist_<chrome|firefox>` folder.
 
 To create an optimized production build, run `yarn build[:chrome|:firefox]`, or
 `npm run build[:chrome|:firefox]`.
