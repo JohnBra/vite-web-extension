@@ -83,12 +83,34 @@ For Firefox
 ### Customization <a name="customization"></a>
 
 #### Adding / removing pages
-The template includes **all** of the extension pages (i.e. New Tab, Dev Panel, Popup, etc.).
-You will likely have to customize it to fit your needs.
+The template includes source code for **all** of the extension pages (i.e. New Tab, Dev Tools, Popup, Side Panel
+etc.). You will likely have to customize it to fit your needs.
 
 E.g. you don't want the newtab page to activate whenever you open a new tab:
 1. remove the directory `newtab` and its contents in `src/pages`
 2. remove `chrome_url_overrides: { newtab: 'src/pages/newtab/index.html' },` in `manifest.json`
+
+Some pages like the "Side Panel" don't work the exact same in Chrome and Firefox. While this template includes
+the source code for the side panel, it won't automatically be included in the dist file to prevent cross browser
+build warnings.
+
+To include the side panel for Chrome add the following to the `manifest.json`:
+
+```typescript
+{
+  "manifest_version": 3,
+  // ...
+  "permissions": [
+    "activeTab",
+    "sidePanel" // <-- permission for sidepanel
+  ],
+  // ...
+  "side_panel": {
+    "default_path": "src/pages/panel/index.html" // <-- tell vite to include it in the build files
+  },
+  // ...
+}
+```
 
 If you need to declare pages in addition to the manifest pages, e.g. a custom `app` page, create a 
 new folder in the `pages` directory and add the corresponding `.html`, `.tsx` and `.css` 

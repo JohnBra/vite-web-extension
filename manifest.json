@@ -18,7 +18,8 @@
     "128": "icon-128.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "sidePanel"
   ],
   "content_scripts": [
     {
@@ -35,6 +36,9 @@
       ]
     }
   ],
+  "side_panel": {
+    "default_path": "src/pages/panel/index.html"
+  },
   "devtools_page": "src/pages/devtools/index.html",
   "web_accessible_resources": [
     {
