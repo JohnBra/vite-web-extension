@@ -37,7 +37,7 @@ If you are looking for a React focused way to access the local storage, I also i
 well with this template. [Check it out here](https://gist.github.com/JohnBra/c81451ea7bc9e77f8021beb4f198ab96).
 
 ## Features <a name="features"></a>
-- [React 18](https://reactjs.org/)
+- [React 19](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [i18n (optional)](https://developer.chrome.com/docs/extensions/reference/api/i18n)

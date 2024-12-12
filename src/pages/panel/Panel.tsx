@@ -1,7 +1,7 @@
 import React from 'react';
 import '@pages/panel/Panel.css';
 
-export default function Panel(): JSX.Element {
+export default function Panel() {
   return (
     <div className="container">
       <h1>Side Panel</h1>
