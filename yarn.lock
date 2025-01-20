@@ -675,10 +675,10 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/chrome@^0.0.293":
-  version "0.0.293"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.293.tgz#1494b081b91521d749d2a5e3602eae202729991a"
-  integrity sha512-pghCOLVHsnePWcMEHCxkAfMRx8qJWmj4lUoyF3ZpANniKz8AucIGLSld7smsrTdLUkk/p5JjOCGVDRdUDHx+uA==
+"@types/chrome@^0.0.297":
+  version "0.0.297"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.297.tgz#b0b4515fd24d2fa585c02a6c701b596b7436e4cf"
+  integrity sha512-e7HM20aH/0Ate5zEP00il2Dzlt8HvO6nXGgxiXKuc1E5cVsNvcykBiTyrSvmWPPDzdZRC5QZvVDYXTihiF1Jfw==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
