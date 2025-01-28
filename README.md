@@ -174,6 +174,7 @@ To run the workflow do the following:
 - [Chrome Extension i18n](https://developer.chrome.com/docs/extensions/reference/api/i18n#description)
 - [Cross browser development with webextension-polyfill](https://github.com/mozilla/webextension-polyfill?tab=readme-ov-file#webextension-browser-api-polyfill)
 - [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin)
+- [Rollup](https://rollupjs.org/guide/en/)
 - [Tailwind CSS 4](https://tailwindcss.com/docs/configuration)
 
 # Contributing <a name="contributing"></a>
