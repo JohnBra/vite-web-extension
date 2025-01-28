@@ -39,7 +39,7 @@ well with this template. [Check it out here](https://gist.github.com/JohnBra/c81
 ## Features <a name="features"></a>
 - [React 19](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
 - [i18n (optional)](https://developer.chrome.com/docs/extensions/reference/api/i18n)
 - [Cross browser development with polyfill (optional)](https://github.com/mozilla/webextension-polyfill?tab=readme-ov-file#basic-setup-with-module-bundlers)
 - [ESLint](https://eslint.org/)
@@ -173,13 +173,8 @@ To run the workflow do the following:
 - [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
 - [Chrome Extension i18n](https://developer.chrome.com/docs/extensions/reference/api/i18n#description)
 - [Cross browser development with webextension-polyfill](https://github.com/mozilla/webextension-polyfill?tab=readme-ov-file#webextension-browser-api-polyfill)
-- [Rollup](https://rollupjs.org/guide/en/)
 - [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin)
 - [Tailwind CSS](https://tailwindcss.com/docs/configuration)
-
-# Credit <a name="credit"></a>
-Heavily inspired by [Jonghakseo's vite chrome extension boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite). 
-It uses SASS instead of TailwindCSS and is ~~slightly~~ _a lot_ less minimalist in case you want to check it out.
 
 # Contributing <a name="contributing"></a>
 Feel free to open PRs or raise issues!
