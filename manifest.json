@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "name in manifest.json",
-  "description": "description in manifest.json",
+  "name": "VNPT Screen Flow Recorder",
+  "description": "Record user interactions and create step-by-step guides",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },
@@ -11,14 +11,16 @@
       "32": "icon-32.png"
     }
   },
-  "chrome_url_overrides": {
-    "newtab": "src/pages/newtab/index.html"
-  },
   "icons": {
     "128": "icon-128.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "desktopCapture",
+    "system.memory"
   ],
   "content_scripts": [
     {
