@@ -25,7 +25,7 @@
     "@crxjs/vite-plugin": "^2.0.0-beta.32",
     "@tailwindcss/vite": "^4.0.8",
     "@types/chrome": "^0.0.304",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.9",
     "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.4",
     "@types/webextension-polyfill": "^0.12.2",
