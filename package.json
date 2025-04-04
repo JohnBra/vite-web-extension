@@ -17,7 +17,7 @@
   },
   "type": "module",
   "dependencies": {
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "react-dom": "^19.0.0",
     "webextension-polyfill": "^0.12.0"
   },
@@ -26,7 +26,7 @@
     "@tailwindcss/vite": "^4.0.17",
     "@types/chrome": "^0.0.309",
     "@types/node": "^22.14.0",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.1.0",
     "@types/react-dom": "^19.0.4",
     "@types/webextension-polyfill": "^0.12.3",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
