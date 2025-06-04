@@ -26,7 +26,7 @@
     "@tailwindcss/vite": "^4.0.17",
     "@types/chrome": "^0.0.323",
     "@types/node": "^22.15.21",
-    "@types/react": "^19.1.0",
+    "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.1",
     "@types/webextension-polyfill": "^0.12.3",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
