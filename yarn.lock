@@ -865,10 +865,10 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/chrome@^0.0.323":
-  version "0.0.323"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.323.tgz#8e6d3ffaca47a9c8ce6f60d25634d26aba3c4cfb"
-  integrity sha512-ipiDwx41lmGeLnbiT6ENOayvWXdkqKqNwqDQWEuz6dujaX7slSkk1nbSt5Q5c6xnQ708+kuCFrC00VLltSbWVA==
+"@types/chrome@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.1.0.tgz#2aaa7d32ca5bc98b57af7546c6fbb1b296d29600"
+  integrity sha512-Mq712O2Ykw+EVAC5D1wt4Ot4v2rfp7nDosmxhIMKULJAa8o7ELeO88rWzRasaB+AYnqayzfX/XSWaDKBfk1rYQ==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
