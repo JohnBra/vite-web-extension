@@ -3861,10 +3861,15 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwindcss@4.1.8, tailwindcss@^4.1.8:
+tailwindcss@4.1.8:
   version "4.1.8"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.8.tgz#5d66d095ee7d82f03d6dbc6158bc248e064a5c05"
   integrity sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==
+
+tailwindcss@^4.1.11:
+  version "4.1.11"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.11.tgz#799af3e98c19c5baaefafc6e0c16304a0e684854"
+  integrity sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==
 
 tapable@^2.2.0:
   version "2.2.1"
