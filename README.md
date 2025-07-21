@@ -139,6 +139,8 @@ to use it in combination with Tailwind CSS. **Feel free to delete them**.
 
 Tailwind can be configured, themed and extended according to the [docs](https://tailwindcss.com/docs/theme).
 
+shadow dom is default enabled for content script. If you want to disable it, you can do it in `src/pages/content/index.tsx` by setting `enableShadowDome` to `false`.
+
 #### Internationalization (i18n)
 To enable internationalization set the `localize` flag in the `vite.config.base.ts` to `true`.
 
