@@ -933,10 +933,10 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/chrome@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.1.0.tgz#2aaa7d32ca5bc98b57af7546c6fbb1b296d29600"
-  integrity sha512-Mq712O2Ykw+EVAC5D1wt4Ot4v2rfp7nDosmxhIMKULJAa8o7ELeO88rWzRasaB+AYnqayzfX/XSWaDKBfk1rYQ==
+"@types/chrome@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.1.1.tgz#7ec0ad62e8742cfdbebc1e4bdf121631bcd3d180"
+  integrity sha512-MLtFW++/n+OPQIaf5hA6pmURd3Zn+OxuvASyf2mYh8B8pHDpbhHjwlVHMw3H/aJC9Z7Z3itO0AFaZeegrGk0yA==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
