@@ -40,7 +40,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "fs-extra": "^11.3.0",
     "nodemon": "^3.1.10",
-    "tailwindcss": "^4.1.8",
+    "tailwindcss": "^4.1.16",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
